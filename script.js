@@ -59,6 +59,8 @@ document.querySelectorAll(".inline-add-btn").forEach((btn) => {
     nameInput.value = "";
     urlInput.value = "";
     card.querySelector(".inline-form").classList.add("hidden");
+    const btn = card.querySelector(".add-link-btn");
+    btn.textContent = "+";
 
     renderLinks();
   });
