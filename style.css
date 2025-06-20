@@ -1,6 +1,7 @@
 :root {
     --bg: #f2f2f2;
     --card-bg: #d9d9d9;
+    --card-fg:#cccccc;
     --text-main: #444444;
     --text-sub: #737373;
 }
@@ -8,6 +9,7 @@
 body.dark-mode {
     --bg: #0d0d0d;
     --card-bg: #1d1d1d;
+    --card-fg:#262626;
     --text-main: #adadad;
     --text-sub: #6d6d6d;
 }
@@ -204,7 +206,7 @@ input::placeholder {
 
 .link-list li {
     padding: 5px 15px;
-    background-color: var(--bg);
+    background-color: var(--card-fg);
     border-radius: 99px;
     color: var(--text-main);
     font-size: 1em;
