@@ -196,7 +196,7 @@ input::placeholder {
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
-    gap: 5px;
+    gap: 10px;
 }
 
 .link-list::-webkit-scrollbar {
