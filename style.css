@@ -23,7 +23,7 @@ body {
     letter-spacing: -0.05em;
     line-height: 1em;
     display: flex;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
     height: 100vh;
     width: 100vw;
@@ -44,7 +44,7 @@ input::placeholder {
     flex: 0.4;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .pill {
@@ -84,7 +84,7 @@ input::placeholder {
 #content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 5px;
     flex: 1;
 }
 
@@ -196,7 +196,7 @@ input::placeholder {
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
-    gap: 10px;
+    gap: 5px;
 }
 
 .link-list::-webkit-scrollbar {
@@ -205,7 +205,7 @@ input::placeholder {
 }
 
 .link-list li {
-    padding: 5px 15px;
+    padding: 10px 15px;
     background-color: var(--card-fg);
     border-radius: 99px;
     color: var(--text-main);
