@@ -1,0 +1,242 @@
+:root {
+    --bg: #f2f2f2;
+    --card-bg: #d9d9d9;
+    --text-main: #444444;
+    --text-sub: #737373;
+}
+
+body.dark-mode {
+    --bg: #0d0d0d;
+    --card-bg: #1d1d1d;
+    --text-main: #adadad;
+    --text-sub: #6d6d6d;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 1em;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: var(--text-sub);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 1em;
+    opacity: 1;
+    /* Remove default opacity in some browsers */
+}
+
+.sidebar {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pill {
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 50px;
+    font-size: 1.2rem;
+    border: none;
+    color: var(--text-main);
+    width: 1fr;
+}
+
+.pill:focus {
+    outline: none;
+}
+
+#themeToggle {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-sub);
+    padding: 40px;
+    border-radius: 90px;
+    cursor: pointer;
+}
+
+#themeToggle svg {
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    flex: 1;
+}
+
+.category-card {
+    position: relative;
+    min-height: 25vh;
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.category-control {
+    display: flex;
+    flex-direction: row;
+}
+
+.category-name {
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.05em;
+    line-height: 1em;
+    font-size: 0.8em;
+    outline: none;
+    width: 100%;
+}
+
+.add-link-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: var(--text-sub);
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.inline-form {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    right: 10px;
+    background-color: var(--bg);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    will-change: opacity, transform;
+}
+
+.inline-form.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.inline-form input {
+    padding: 10px;
+    font-size: 0.8em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--card-bg);
+    color: var(--text-main);
+}
+
+.inline-form button {
+    padding: 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: none;
+    border-radius: 90px;
+    background: var(--card-bg);
+    color: var(--text-sub);
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.inline-form:not(.hidden) {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.link-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 5px;
+}
+
+.link-list::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar (Chrome, Safari) */
+}
+
+.link-list li {
+    padding: 5px 15px;
+    background-color: var(--bg);
+    border-radius: 99px;
+    color: var(--text-main);
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.context-menu {
+    position: absolute;
+    background: var(--bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+    list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    z-index: 9999;
+    min-width: 100px;
+}
+
+.context-menu li {
+    padding: 5px 10px;
+    color: var(--text-sub);
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.context-menu li:hover {
+    background-color: var(--card-bg);
+}
+
+.hidden {
+    display: none;
+}
