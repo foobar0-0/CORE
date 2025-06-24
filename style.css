@@ -122,7 +122,7 @@ input::placeholder {
     align-self: flex-end;
     background: none;
     border: none;
-    color: var(--text-sub);
+    color: var(--card-fg);
     font-size: 1.2em;
     cursor: pointer;
 }
