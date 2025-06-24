@@ -1,7 +1,7 @@
 :root {
     --bg: #f2f2f2;
     --card-bg: #d9d9d9;
-    --card-fg:#cccccc;
+    --card-fg: #cccccc;
     --text-main: #444444;
     --text-sub: #737373;
 }
@@ -9,7 +9,7 @@
 body.dark-mode {
     --bg: #0d0d0d;
     --card-bg: #1d1d1d;
-    --card-fg:#2a2a2a;
+    --card-fg: #2a2a2a;
     --text-main: #9d9d9d;
     --text-sub: #6d6d6d;
 }
@@ -44,7 +44,22 @@ input::placeholder {
     flex: 0.4;
     display: flex;
     flex-direction: column;
+    justify-content: space-between
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
     gap: 5px;
+}
+
+#credit {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+}
+
+#credit a {
+    color: var(--text-sub);
 }
 
 .pill {
