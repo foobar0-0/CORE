@@ -8,8 +8,8 @@
 
 body.dark-mode {
     --bg: #0d0d0d;
-    --card-bg: #121212;
-    --card-fg:#1d1d1d;
+    --card-bg: #1d1d1d;
+    --card-fg:#2a2a2a;
     --text-main: #9d9d9d;
     --text-sub: #6d6d6d;
 }
@@ -23,8 +23,8 @@ body {
     letter-spacing: -0.05em;
     line-height: 1em;
     display: flex;
-    gap: 5px;
-    padding: 10px;
+    gap: 50px;
+    padding: 50px;
     height: 100vh;
     width: 100vw;
     box-sizing: border-box;
@@ -122,7 +122,7 @@ input::placeholder {
     align-self: flex-end;
     background: none;
     border: none;
-    color: var(--card-fg);
+    color: var(--bg);
     font-size: 1.2em;
     cursor: pointer;
 }
