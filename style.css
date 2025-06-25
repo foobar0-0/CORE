@@ -105,10 +105,10 @@ input::placeholder {
 
 .category-card {
     position: relative;
-    min-height: 25vh;
+    min-height: 20vh;
     flex: 1;
     background-color: var(--card-bg);
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
