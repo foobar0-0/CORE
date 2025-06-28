@@ -14,7 +14,8 @@ updateDate()
 document.getElementById("searchInput").addEventListener("keydown", e => {
   if (e.key === "Enter") {
     const query = e.target.value
-    if (query) window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank")
+    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    e.target.value = "";
   }
 })
 
@@ -106,7 +107,7 @@ function renderLinks() {
     links.forEach((link) => {
       const li = document.createElement("li");
       li.textContent = link.name;
-      li.onclick = () => window.open(link.url, "_blank");
+      li.onclick = () => window.location.href = link.url;
       list.appendChild(li);
     });
   });
