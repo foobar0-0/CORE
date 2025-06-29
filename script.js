@@ -69,6 +69,28 @@ document.querySelectorAll(".inline-add-btn").forEach((btn) => {
   });
 });
 
+// --- Enter key navigation between inputs and submit ---
+document.querySelectorAll(".inline-link-name").forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const card = input.closest(".category-card");
+      const urlInput = card.querySelector(".inline-link-url");
+      urlInput.focus();
+    }
+  });
+});
+
+document.querySelectorAll(".inline-link-url").forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const card = input.closest(".category-card");
+      card.querySelector(".inline-add-btn").click();
+    }
+  });
+});
+
 // Save renamed category names
 document.querySelectorAll(".category-name").forEach((input) => {
   input.addEventListener("input", () => {
