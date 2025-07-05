@@ -1,6 +1,6 @@
 :root {
     --bg: #f2f2f2;
-    --card-bg: #d9d9d9;
+    --card-bg: #e4e4e4;
     --card-fg: #cccccc;
     --text-main: #444444;
     --text-sub: #737373;
@@ -8,9 +8,9 @@
 
 body.dark-mode {
     --bg: #0d0d0d;
-    --card-bg: #1d1d1d;
+    --card-bg: #141414;
     --card-fg: #2a2a2a;
-    --text-main: #9d9d9d;
+    --text-main: #a2a2a2;
     --text-sub: #6d6d6d;
 }
 
@@ -20,9 +20,10 @@ body {
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    letter-spacing: -0.05em;
-    line-height: 1em;
+    letter-spacing: -0.05rem;
+    line-height: normal;
     display: flex;
+    flex-direction: column;
     gap: 50px;
     padding: 50px;
     height: 100vh;
@@ -30,32 +31,49 @@ body {
     box-sizing: border-box;
 }
 
-input::placeholder {
-    color: var(--text-sub);
+input {
+    font-size: 1.2rem;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    letter-spacing: -0.05em;
-    line-height: 1em;
+    letter-spacing: -0.05rem;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+input::placeholder {
+    color: var(--text-sub);
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.05rem;
+    line-height: normal;
     opacity: 1;
     /* Remove default opacity in some browsers */
 }
 
 .sidebar {
-    flex: 0.4;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between
+    flex-direction: row;
+    gap: 50px;
+    align-items: flex-start;
 }
 
 .controls {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
 }
 
+
 #credit {
+    margin: 0;
+    width: fit-content;
     font-size: 0.8rem;
     color: var(--text-sub);
+    white-space: nowrap;
 }
 
 #credit a {
@@ -67,20 +85,27 @@ input::placeholder {
     background: var(--card-fg);
     border-radius: 50px;
     font-size: 1.2rem;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
     border: none;
     color: var(--text-main);
-    width: 1fr;
+    width: 100%;
 }
 
 .pill:focus {
     outline: none;
 }
 
+#dateDisplay {
+    width: fit-content;
+    white-space: nowrap;
+}
+
 #themeToggle {
     width: fit-content;
     display: flex;
     align-items: center;
-    gap: 5px;
     background-color: var(--card-fg);
     color: var(--text-sub);
     padding: 40px;
@@ -98,14 +123,14 @@ input::placeholder {
 
 #content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 5px;
     flex: 1;
 }
 
 .category-card {
     position: relative;
-    min-height: 20vh;
+    min-height: 25vh;
     flex: 1;
     background-color: var(--card-bg);
     padding: 20px;
@@ -137,14 +162,14 @@ input::placeholder {
     align-self: flex-end;
     background: none;
     border: none;
-    color: var(--bg);
-    font-size: 1.2rem;
+    color: var(--text-sub);
+    font-size: 1rem;
     cursor: pointer;
 }
 
 .inline-form {
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 10px;
     right: 10px;
     background-color: var(--bg);
@@ -177,8 +202,16 @@ input::placeholder {
     font-size: 0.8rem;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--card-bg);
+    border-bottom: 1px solid var(--card-fg);
     color: var(--text-main);
+}
+
+.inline-form input::placeholder {
+    font-size: 0.8rem;
+}
+.inline-form input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--text-main);
 }
 
 .inline-form button {
@@ -187,7 +220,7 @@ input::placeholder {
     cursor: pointer;
     border: none;
     border-radius: 90px;
-    background: var(--card-bg);
+    background: var(--card-fg);
     color: var(--text-sub);
 }
 
