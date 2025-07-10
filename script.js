@@ -220,11 +220,64 @@ function applyTheme(theme) {
   }
 }
 
+// --- Drag and Drop ---
+function enableDragAndDrop() {
+  const grid = document.getElementById("categoryGrid");
+
+  Sortable.create(grid, {
+    animation: 150,
+    ghostClass: "dragging",
+    onEnd: () => {
+      const newOrder = Array.from(grid.children).map((el) =>
+        el.getAttribute("data-id")
+      );
+      localStorage.setItem("cardOrder", JSON.stringify(newOrder));
+    },
+  });
+}
+
+function getDragAfterElement(container, x, y) {
+  const cards = [...container.querySelectorAll(".category-card:not(.dragging)")];
+
+  return cards.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+    if (offset < 0 && offset > closest.offset) {
+      return { offset, element: child };
+    } else {
+      return closest;
+    }
+  }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
+function restoreCardOrder() {
+  const savedOrder = JSON.parse(localStorage.getItem("cardOrder") || "[]");
+  const grid = document.getElementById("categoryGrid");
+
+  if (savedOrder.length) {
+    const cardMap = {};
+    Array.from(grid.children).forEach((card) => {
+      const id = card.getAttribute("data-id");
+      cardMap[id] = card;
+    });
+
+    grid.innerHTML = ""; // Clear grid
+
+    savedOrder.forEach((id) => {
+      if (cardMap[id]) grid.appendChild(cardMap[id]);
+    });
+
+    // Append any missing cards (newly added)
+    Object.keys(cardMap).forEach((id) => {
+      if (!savedOrder.includes(id)) grid.appendChild(cardMap[id]);
+    });
+  }
+}
+
 // Init
 window.onload = () => {
   restoreCategoryNames();
   renderLinks();
+  restoreCardOrder();
+  enableDragAndDrop();
 };
-
-
-

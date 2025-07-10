@@ -122,7 +122,7 @@ input::placeholder {
     display: none;
 }
 
-#content {
+#categoryGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
@@ -140,6 +140,12 @@ input::placeholder {
     flex-direction: column;
     gap: 10px;
     overflow: hidden;
+}
+
+.category-card.dragging {
+    opacity: 1;
+    transform: scale(0.98);
+    transition: all 0.2s ease;
 }
 
 .category-control {
@@ -210,6 +216,7 @@ input::placeholder {
 .inline-form input::placeholder {
     font-size: 0.8rem;
 }
+
 .inline-form input:focus {
     outline: none;
     border-bottom: 1px solid var(--text-main);
