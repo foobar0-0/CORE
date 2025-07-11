@@ -1,6 +1,5 @@
 :root {
     --bg: #f2f2f2;
-    --card-bg: #e4e4e4;
     --card-fg: #cccccc;
     --text-main: #444444;
     --text-sub: #737373;
@@ -8,9 +7,8 @@
 
 body.dark-mode {
     --bg: #0d0d0d;
-    --card-bg: #141414;
-    --card-fg: #2a2a2a;
-    --text-main: #a2a2a2;
+    --card-fg: #3a3a3a;
+    --text-main: #b2b2b2;
     --text-sub: #6d6d6d;
 }
 
@@ -129,7 +127,7 @@ input::placeholder {
 #categoryGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
+    gap: 25px;
     flex: 1;
 }
 
@@ -137,9 +135,9 @@ input::placeholder {
     position: relative;
     min-height: 25vh;
     flex: 1;
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
+    /*background-color: var(--card-bg);*/
+    padding: 10px;
+    border-top: 1px solid var(--card-fg);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -173,7 +171,7 @@ input::placeholder {
     background: none;
     border: none;
     font-family: 'Inter', sans-serif;
-    color: var(--text-sub);
+    color: var(--card-fg);
     font-size: 1rem;
     cursor: pointer;
 }
@@ -183,9 +181,9 @@ input::placeholder {
     top: 50px;
     left: 10px;
     right: 10px;
-    background-color: var(--bg);
+    background-color: var(--card-fg);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -213,12 +211,13 @@ input::placeholder {
     font-size: 0.8rem;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--card-fg);
+    border-bottom: 1px solid var(--bg);
     color: var(--text-main);
 }
 
 .inline-form input::placeholder {
     font-size: 0.8rem;
+    color: var(--text-sub);
 }
 
 .inline-form input:focus {
@@ -232,7 +231,7 @@ input::placeholder {
     cursor: pointer;
     border: none;
     border-radius: 90px;
-    background: var(--card-fg);
+    background: var(--bg);
     color: var(--text-sub);
 }
 
@@ -282,11 +281,11 @@ input::placeholder {
 
 .context-menu {
     position: absolute;
-    background: var(--bg);
+    background: var(--card-fg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
     list-style: none;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 0.8em;
     z-index: 9999;
     min-width: 100px;
@@ -301,7 +300,7 @@ input::placeholder {
 }
 
 .context-menu li:hover {
-    background-color: var(--card-bg);
+    background-color: var(--bg);
 }
 
 .hidden {
