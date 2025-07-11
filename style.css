@@ -1,14 +1,14 @@
 :root {
     --bg: #f2f2f2;
     --card-fg: #cccccc;
-    --text-main: #444444;
-    --text-sub: #737373;
+    --text-main: #333333;
+    --text-sub: #939393;
 }
 
 body.dark-mode {
     --bg: #0d0d0d;
     --card-fg: #3a3a3a;
-    --text-main: #b2b2b2;
+    --text-main: #c2c2c2;
     --text-sub: #6d6d6d;
 }
 
@@ -26,6 +26,7 @@ body {
     padding: 50px;
     height: 100vh;
     width: 100vw;
+
     box-sizing: border-box;
 }
 
@@ -275,7 +276,7 @@ input::placeholder {
 }
 
 .link-list li:hover {
-    transform: scale(0.98);
+    background-color: var(--text-sub);
     transition: transform 0.2s ease;
 }
 
