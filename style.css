@@ -3,6 +3,7 @@
     --card-fg: #cccccc;
     --text-main: #333333;
     --text-sub: #939393;
+    --accent: #617AFF;
 }
 
 body.dark-mode {
@@ -10,6 +11,7 @@ body.dark-mode {
     --card-fg: #3a3a3a;
     --text-main: #c2c2c2;
     --text-sub: #6d6d6d;
+    --accent: #0606E0;
 }
 
 body {
@@ -56,6 +58,10 @@ input::placeholder {
     /* Remove default opacity in some browsers */
 }
 
+input:focus::placeholder {
+    color: var(--text-main);
+}
+
 .sidebar {
     display: flex;
     flex-direction: row;
@@ -98,6 +104,8 @@ input::placeholder {
 
 .pill:focus {
     outline: none;
+    background-color: var(--accent);
+    color: var(--text-main);
 }
 
 #dateDisplay {
@@ -115,6 +123,11 @@ input::placeholder {
     padding: 40px;
     border-radius: 90px;
     cursor: pointer;
+}
+
+#themeToggle:hover {
+    background-color: var(--accent);
+    color: var(--text-main);
 }
 
 #themeToggle svg {
@@ -136,7 +149,6 @@ input::placeholder {
     position: relative;
     min-height: 25vh;
     flex: 1;
-    /*background-color: var(--card-bg);*/
     padding: 10px;
     border-top: 1px solid var(--card-fg);
     display: flex;
@@ -276,7 +288,7 @@ input::placeholder {
 }
 
 .link-list li:hover {
-    background-color: var(--text-sub);
+    background-color: var(--accent);
     transition: transform 0.2s ease;
 }
 

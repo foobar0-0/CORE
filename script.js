@@ -194,6 +194,7 @@ function getLinkURL(linkElement) {
   return match?.url || null;
 }
 
+// Theme Toggle
 const toggleButton = document.getElementById("themeToggle");
 const sunIcon = document.getElementById("sunIcon");
 const moonIcon = document.getElementById("moonIcon");
