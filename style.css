@@ -224,7 +224,7 @@ input:focus::placeholder {
     font-size: 0.8rem;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--bg);
+    border-bottom: 1px solid var(--text-sub);
     color: var(--text-main);
 }
 
@@ -244,8 +244,8 @@ input:focus::placeholder {
     cursor: pointer;
     border: none;
     border-radius: 90px;
-    background: var(--bg);
-    color: var(--text-sub);
+    background: var(--accent);
+    color: var(--text-main);
 }
 
 .hidden {
@@ -313,7 +313,8 @@ input:focus::placeholder {
 }
 
 .context-menu li:hover {
-    background-color: var(--bg);
+    color: var(--text-main);
+    background-color: var(--accent);
 }
 
 .hidden {
