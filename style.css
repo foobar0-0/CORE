@@ -76,7 +76,6 @@ input:focus::placeholder {
     gap: 5px;
 }
 
-
 #credit {
     margin: 0;
     width: fit-content;
@@ -103,6 +102,23 @@ input:focus::placeholder {
 }
 
 .pill:focus {
+    outline: none;
+    background-color: var(--accent);
+    color: var(--text-main);
+}
+
+.pill-short {
+    padding: 40px;
+    background: var(--card-fg);
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    border: none;
+    color: var(--text-main);
+}
+
+.pill-short:focus {
     outline: none;
     background-color: var(--accent);
     color: var(--text-main);

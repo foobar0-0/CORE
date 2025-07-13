@@ -194,6 +194,41 @@ function getLinkURL(linkElement) {
   return match?.url || null;
 }
 
+//Link Search
+const searchInput = document.getElementById("linkSearchInput");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+
+  document.querySelectorAll(".category-card").forEach((card) => {
+    const id = card.getAttribute("data-id");
+    const storedLinks = JSON.parse(localStorage.getItem("links") || "{}")[id] || [];
+
+    const list = card.querySelector(".link-list");
+    const lis = list.querySelectorAll("li");
+
+    lis.forEach((li) => {
+      const text = li.textContent.toLowerCase();
+      const linkObj = storedLinks.find(l => l.name === li.textContent);
+      const url = linkObj?.url?.toLowerCase() || "";
+
+      const matches = text.includes(query) || url.includes(query);
+
+      // Reset styling first
+      li.style.display = "inline-block";
+      li.style.backgroundColor = "";
+      li.style.color = "";
+
+      if (query && !matches) {
+        li.style.display = "none";
+      } else if (query && matches) {
+        li.style.backgroundColor = "var(--accent)";
+        li.style.color = "#fff";
+      }
+    });
+  });
+});
+
 // Theme Toggle
 const toggleButton = document.getElementById("themeToggle");
 const sunIcon = document.getElementById("sunIcon");
