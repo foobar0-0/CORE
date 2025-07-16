@@ -305,7 +305,6 @@ input:focus::placeholder {
 
 .link-list li:hover {
     background-color: var(--accent);
-    transition: transform 0.2s ease;
 }
 
 .context-menu {
