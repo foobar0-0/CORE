@@ -6,6 +6,19 @@
     --accent: #91B5E7;
 }
 
+.bitcount {
+    font-family: "Bitcount Prop Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* You can use any value from 100 to 900 */
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
+}
+
 body.dark-mode {
     --bg: #0d0d0d;
     --card-fg: #3a3a3a;

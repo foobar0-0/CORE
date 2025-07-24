@@ -167,6 +167,15 @@ document.getElementById("copyUrl").addEventListener("click", () => {
   menu.classList.add("hidden");
 });
 
+// Open in new tab
+document.getElementById("openInNewTab").addEventListener("click", () => {
+  const url = getLinkURL(currentLink);
+  if (url) {
+    window.open(url, "_blank");
+  }
+  menu.classList.add("hidden");
+});
+
 // Delete clicked link
 document.getElementById("deleteLink").addEventListener("click", () => {
   const card = currentLink.closest(".category-card");
